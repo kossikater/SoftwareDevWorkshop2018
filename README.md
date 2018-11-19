@@ -1,1 +1,2 @@
-﻿﻿# SoftwareDevWorkshop2018Software Development in Science Workshop | November 2018**This is my line indicating my collaboration with Niklas**
+# SoftwareDevWorkshop2018
+Software Development in Science Workshop | November 2018
