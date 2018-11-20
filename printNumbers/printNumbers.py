@@ -27,13 +27,15 @@
 """
 Usage:
   printNumbers.py -h --help
-  printNumbers.py [--fibonacci|--factorial|--substraction] <operand>
+  printNumbers.py [--fibonacci|--factorial|--substraction|--normalize] <operand>
+  printNumbers.py [--fibonacci|--factorial|--normalize] <operand>
 
 Options:
   -h --help       Print usage.
   --fibonacci     Print the fibonacci sequence.
   --factorial     Print the factorial.
   --substraction  Print a given number reduced by 5.
+  --normalize     Print the normalization.
 """
 
 from docopt import docopt
@@ -41,6 +43,7 @@ from parameters import *
 from functions.fibonacci import *
 from functions.factorial import *
 from functions.substraction import *
+from functions.normalize import *
 
 #
 # FUNCTION TABLE
@@ -48,6 +51,7 @@ from functions.substraction import *
 functionTable = { CONST_FUNC_CODE_FIBONACCI : FibonacciSequence,
                   CONST_FUNC_CODE_FACTORIAL : Factorial,
                   CONST_FUNC_CODE_SUBSTRACTION : reduce_by_five,
+                  CONST_FUNC_CODE_NORMALIZE : Normalize,
                 }
 
 #
@@ -72,3 +76,5 @@ if __name__ == '__main__':
         print(str(params.operand) + '! =', str(result))
     elif params.functionIndex == CONST_FUNC_CODE_SUBSTRACTION:
       print(str(params.operand) + ' reduced by 5 is: ' + str(result))
+    elif params.functionIndex == CONST_FUNC_CODE_NORMALIZE:
+        print(str(params.operand) + ' normalized to', str(result))

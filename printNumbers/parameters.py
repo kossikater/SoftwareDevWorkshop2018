@@ -30,6 +30,7 @@ CONST_MAX_OPERAND_VAL = 20
 CONST_FUNC_CODE_FIBONACCI = 0
 CONST_FUNC_CODE_FACTORIAL = 1
 CONST_FUNC_CODE_SUBSTRACTION = 2
+CONST_FUNC_CODE_NORMALIZE = 3
 
 class Parameters(object):
 
@@ -46,6 +47,8 @@ class Parameters(object):
             self.functionIndex = CONST_FUNC_CODE_FACTORIAL
         elif cmdLineArgs['--substraction']:
             self.functionIndex = CONST_FUNC_CODE_SUBSTRACTION
+        elif cmdLineArgs['--normalize']:
+            self.functionIndex = CONST_FUNC_CODE_NORMALIZE
 
     @property
     def operand(self):
