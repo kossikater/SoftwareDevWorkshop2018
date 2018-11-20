@@ -27,24 +27,27 @@
 """
 Usage:
   printNumbers.py -h --help
-  printNumbers.py [--fibonacci|--factorial] <operand>
+  printNumbers.py [--fibonacci|--factorial|--normalize] <operand>
 
 Options:
   -h --help       Print usage.
   --fibonacci     Print the fibonacci sequence.
   --factorial     Print the factorial.
+  --normalize     Print the normalization.
 """
 
 from docopt import docopt
 from parameters import *
 from functions.fibonacci import *
 from functions.factorial import *
+from functions.normalize import *
 
 #
 # FUNCTION TABLE
 #
 functionTable = { CONST_FUNC_CODE_FIBONACCI : FibonacciSequence,
                   CONST_FUNC_CODE_FACTORIAL : Factorial,
+                  CONST_FUNC_CODE_NORMALIZE : Normalize,
                 }
 
 #
@@ -67,3 +70,5 @@ if __name__ == '__main__':
         print('fib(' + str(params.operand) + ') =', result)
     elif params.functionIndex == CONST_FUNC_CODE_FACTORIAL:
         print(str(params.operand) + '! =', str(result))
+    elif params.functionIndex == CONST_FUNC_CODE_NORMALIZE:
+        print(str(params.operand) + ' normalized to', str(result))
